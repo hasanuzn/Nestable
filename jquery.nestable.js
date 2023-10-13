@@ -455,6 +455,13 @@
                     this.hasNewRoot = this.el[0] !== this.dragRootEl[0];
                 }
             }
+        },
+        
+        reload : function(params) {
+            this.el.off('mousedown');
+            this.reset();
+            $(this.el).removeData("nestable");
+            $(this.el).nestable(params);
         }
 
     };
